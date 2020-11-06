@@ -16,7 +16,6 @@ install:
 before_script:
   - psql -c 'create database "deployment-exercise-test";' -U postgres # remember to change this name if you change it elsewhere (e.g. package.json)
 before_deploy: # omit node_modules, since we set skip_cleanup below
-  - npm run build-client # make the bundle
   - rm -rf node_modules
 deploy: # see README for details on these keys
   # prevents travis from deleting the build
@@ -26,4 +25,4 @@ deploy: # see README for details on these keys
   app: dragons-with-backpacks
   # the secure key indicates an encrypted value; see README
   api_key:
-    secure: By0OHkogWsOaSn/a8d597+Sshq/5eQBzuk80QuHkJFY5/Qu4i9yc/jpq6NCJDFz1d9oUCpsHFnr4loCCZqdFCov/L/N3RTMzjeWMjrVER8thAMBcW8UO0RmcuJUiP9VKBi66IsNmRMCLYDsYx8ZAYXcDisWfOJqg4Dbte4Za/BiWAcc6KMYe/LAefXvFLh4uT6tdT5cXQHHTIu86eFM1Yh6yvhW7Wy9lPN3vBPdwkY56K5SqII5YpKQeRc8MFkuum8RUwB51HP1pgAah/1wRcxwtusGoRZjHFf32I6qPvEMi5WQ0dItvNKjPzsNjvkul7BMSy/sb/tyu+sFpzJR+E9Pc1NYtA42Tw/R/x7A2FEPeumK1re8CmiJM4MkOFGRERgc4UFbwK2SASSUKoc6IsYtQKkIuS4YbVJx77DiD270J1n6eINAgIdtJi21WxpcHvlCDiFeN2o81f9q0YippUEMnEW/5pc+2Wvjy2WGT6X1i9fBDKL2ddxx0I76y5UKq/Rizs4Q9Yn358jbdpe0973kIn5M5oKGuwzSnPiuerlqA4D+JnQZU/MVPnH76RijOI8LLiJd56SnXhx+XlX4zsrfWTc6kNaM7yOH5GsEqE9YqHlFkhv6kaGIHz2RnyxAOrMGYracxS1GphOa5MhKc3iLAK7pSZW3fAG5plgdIvZ8=
+    secure: dtJ5HPBH8RJ90kXHHawPPcsNaUk8G+l6+FCYWKech1Oa6cTQYXJzsazUz4BZrP5Wr+Lb3qGbkBK7hN1tE6n/GETILWDELiLokFjnLi4vJz3RoHuNyqEKCT21UDLJAnW9PxMOfqDSx4vREgnaBTaNdPMaNzse/MgoP+ouWjAXkuaPGsgvWNq8jDYqcO1kncyO5JdvdPFgdZ4rlNN1ow2/IcDihGtgZZlIPa8bK7Xdfrb1wHK1ePRJ/96RHteeaUKxwT60S5ajzZj5D3BeJXs3fKjpLyy9rNW2ruLAxJNQUfwXjnHDkif/wLHOyfYVDaN3VOF83dUO9KwP4gBkuQUGBn76VLl+TaYo0tYS07sEZsefhTEfVdfCBDbP16G2FzVrJG1Qh0EEHntv+efH5oLbo2zk6c4CrnX0SWac/mViakUDhU9kRVFvvnq67fKyQaWWu1/W7HTSCNVBskzv8vFBphv621XoUUs5ocmkYWE9jojT+RX3tgm+KFRO1BTjmt/RzCSjA7ZtDDoRBcABWPqqwIE4/RSieGQKJHbK1o66xi10rdhq4iNKqrlPJk2Ni0S+Q+BzK25vJcVUDVg/MHRbIic8cZJdBdP3FhHJQQ9b6+2Gn9TXpxIojMEksb/XBbxs/pAOmc3R4BTEGIbOu+m/Ly4K6QY1MQfFN62ppgEFRF4=
